@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: php-three-tier
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2026-09-08T14:18:16Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: mysql-service
+  namespace: default
+  resourceVersion: "142786"
+  uid: ed7be0db-6025-4c96-be1b-c767cec0ddf6
+spec:
+  clusterIP: 10.106.238.20
+  clusterIPs:
+  - 10.106.238.20
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysql
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

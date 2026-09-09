@@ -1,0 +1,11 @@
+replicaCount: 2
+image:
+  repository: 637423572077.dkr.ecr.us-east-1.amazonaws.com/myapp
+  tag: "latest"
+  pullPolicy: Always
+service:
+  type: NodePort
+  port: 80
+mysql:
+  rootPassword: PhpPass123
+  database: phpdb

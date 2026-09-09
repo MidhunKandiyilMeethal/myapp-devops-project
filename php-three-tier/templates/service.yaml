@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"myapp","namespace":"default"},"spec":{"ports":[{"nodePort":30081,"port":80,"targetPort":80}],"selector":{"app":"myapp"},"type":"NodePort"}}
+  creationTimestamp: "2026-09-09T02:27:17Z"
+  name: myapp
+  namespace: default
+  resourceVersion: "210064"
+  uid: 8ce0ca30-82f4-4008-962e-fb5c6be4d57e
+spec:
+  clusterIP: 10.107.127.129
+  clusterIPs:
+  - 10.107.127.129
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30081
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myapp
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

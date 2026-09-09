@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  DO_HOST: mysql-service
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: php-three-tier
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2026-09-08T14:18:16Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: php-config
+  namespace: default
+  resourceVersion: "142779"
+  uid: a0e4d2da-969b-4676-a9a2-c625637ac687
