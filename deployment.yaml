@@ -12,9 +12,11 @@ spec:
       labels:
         app: myapp
     spec:
+      imagePullSecrets:
+            - name: ecr-secret
       containers:
             - name: myapp
-        image: nginx:latest
+        image: 186067932771.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
         ports:
                 - containerPort: 80
 ---
@@ -29,3 +31,4 @@ spec:
   ports:
     - port: 80
     targetPort: 80
+    nodePort: 30081
