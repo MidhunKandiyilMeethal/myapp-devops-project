@@ -13,12 +13,21 @@ spec:
         app: myapp
     spec:
       imagePullSecrets:
-      - name: ecr-secret
+            - name: ecr-secret
       containers:
-      - name: myapp
+            - name: myapp
         image: 186067932771.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
         ports:
-        - containerPort: 80
+                - containerPort: 80
+        env:
+                - name: DB_HOST
+          value: mysql
+                - name: DB_USER
+          value: root
+                - name: DB_PASSWORD
+          value: password123
+                - name: DB_NAME
+          value: abc_tech
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +38,6 @@ spec:
   selector:
     app: myapp
   ports:
-  - port: 80
+    - port: 80
     targetPort: 80
     nodePort: 30081
