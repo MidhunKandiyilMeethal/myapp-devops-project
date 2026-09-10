@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo chown -R www-data:www-data /var/www/html
-sudo systemctl restart apache2
+sudo chown -R apache:apache /var/www/html
+sudo systemctl restart httpd
